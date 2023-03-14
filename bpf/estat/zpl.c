@@ -50,6 +50,7 @@ zfs_read_write_entry(io_info_t *info, struct znode *zn, zfs_uio_t *uio, int flag
 {
 	// Essentially ITOZSB, but written explicitly so that BCC can insert
 	// the necessary calls to bpf_probe_read.
+        bpf_printk("Hello zpl");
 	zfsvfs_t *zfsvfs = zn->z_inode.i_sb->s_fs_info;
 
 	objset_t *z_os = zfsvfs->z_os;

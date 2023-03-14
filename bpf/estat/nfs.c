@@ -101,6 +101,7 @@ int
 nfsd3_read_start(struct pt_regs *ctx, struct svc_rqst *rqstp, void *fhp,
     u64 offset, void *vec, int vlen, u32 *count)
 {
+	bpf_printk("iHello nfs");	
 	u32 pid = bpf_get_current_pid_tgid();
 	nfs_data_t data = {};
 	data.ts = bpf_ktime_get_ns();
