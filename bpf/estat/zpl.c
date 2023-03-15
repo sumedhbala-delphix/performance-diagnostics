@@ -1,4 +1,4 @@
-/*
+
  * Copyright 2019 Delphix. All rights reserved.
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -11,6 +11,9 @@
 #include <sys/zfs_znode.h>
 #include <sys/dmu_objset.h>
 #include <sys/spa_impl.h>
+#include <bpf/bpf_helpers.h>
+#include <bpf/bpf_tracing.h>
+#include <linux/bpf.h>
 
 typedef struct {
 	u64 start_time;
